@@ -54,6 +54,31 @@ public class TestJKVC {
 
         //System.out.println("Test data = " + hm);
 
+        // TODO: NO NEGATIVE TEST CASES ATM, THINK ABOUT HOW TO HANDLE ERRORS
+
+        {
+            HashMap<String, List<Integer>> m = new HashMap<String, List<Integer>>();
+            List<Integer> a = new ArrayList<Integer>();
+            a.add(100);
+            a.add(200);
+            a.add(300);
+
+            List<Integer> b = new ArrayList<Integer>();
+            b.add(111);
+            b.add(222);
+            b.add(333);
+
+            m.put("foo", a);
+            m.put("bar", b);
+
+            assertEquals("[100, 200, 300]", JKVC.prepare("foo").eval(m).toString());
+            assertEquals(200, JKVC.prepare("foo.@i[1]").eval(m));
+            assertEquals(3l, JKVC.prepare("foo.@count").eval(m));
+            assertEquals(3, JKVC.prepare("foo.#size").eval(m));
+            assertEquals(600.0d, JKVC.prepare("foo.@sum").eval(m));
+            assertEquals(111, JKVC.prepare("bar.@i[0]").eval(m));
+        }
+
         {
             JKVCPathEvaluator e = JKVC.prepare("foo.listA.@i[0:2]");
             String expected[] = {"ListFoo1", "ListBar1", "ListBaz1"};
@@ -89,5 +114,12 @@ public class TestJKVC {
             JKVCPathEvaluator e = JKVC.prepare("foo.listB.#size");
             assertEquals(2,e.eval(hm));
         }
+
+        {
+            JKVCPathEvaluator e = JKVC.prepare("foo.#getClass.#getName");
+            assertEquals("java.util.HashMap", e.eval(hm));
+        }
+
+
     }
 }
