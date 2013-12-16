@@ -2,7 +2,6 @@ package com.metadave.jkvc;
 
 import com.metadave.jkvc.eval.JKVCDefaultEvalFactory;
 import com.metadave.jkvc.eval.JKVCEvalFactory;
-import com.metadave.jkvc.eval.JKVCEvaluator;
 import com.metadave.jkvc.eval.JKVCPathEvaluator;
 import com.metadave.jkvc.parser.JKVCLexer;
 import com.metadave.jkvc.parser.JKVCParser;
@@ -26,7 +25,7 @@ public class JKVC {
         //parser.addErrorListener(new JKVCErrorListener());
         JKVCWalker ew = new JKVCWalker(f);
         ParseTreeWalker walker = new ParseTreeWalker();
-        JKVCPathEvaluator result = null;
+        JKVCPathEvaluator result;
 
         try {
             JKVCParser.PathContext pc = parser.path();

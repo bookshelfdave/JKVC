@@ -12,9 +12,9 @@ import java.util.Map;
 
 public class JKVCEvalAggregate implements JKVCEvaluator {
 
-    String function;
+    protected String function;
 
-    static Map<String, JKVCAggregate> funs = new HashMap<String, JKVCAggregate>();
+    protected static Map<String, JKVCAggregate> funs = new HashMap<String, JKVCAggregate>();
 
     static {
         funs.put("count", new JKVCCountAggregate());
@@ -26,7 +26,7 @@ public class JKVCEvalAggregate implements JKVCEvaluator {
         return funs;
     }
 
-    protected JKVCEvalAggregate(String function) {
+    public JKVCEvalAggregate(String function) {
         this.function = function;
         if(!funs.containsKey(function)) {
             throw new RuntimeException("Invalid aggregate function specificed:" + function);

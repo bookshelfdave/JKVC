@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 
 public class JKVCEvalMethodCall implements JKVCEvaluator {
 
-    String methodName;
+    protected String methodName;
     public JKVCEvalMethodCall(String methodName) {
         this.methodName = methodName;
     }

@@ -3,8 +3,8 @@ package com.metadave.jkvc.eval;
 import java.util.List;
 
 public class JKVCEvalByRange implements JKVCEvaluator {
-    private int lower;
-    private int upper;
+    protected  int lower;
+    protected  int upper;
 
     public JKVCEvalByRange(int lower, int upper) {
         this.lower = lower;

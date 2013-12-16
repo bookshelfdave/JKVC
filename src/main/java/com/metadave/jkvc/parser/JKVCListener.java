@@ -1,7 +1,7 @@
 // Generated from ./src/main/java/com/metadave/jkvc/parser/JKVC.g4 by ANTLR 4.0
 package com.metadave.jkvc.parser;
-import org.antlr.v4.runtime.tree.*;
-import org.antlr.v4.runtime.Token;
+
+import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 public interface JKVCListener extends ParseTreeListener {
 	void enterIndex_ref(JKVCParser.Index_refContext ctx);

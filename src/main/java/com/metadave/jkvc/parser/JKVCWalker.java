@@ -1,15 +1,11 @@
 package com.metadave.jkvc.parser;
 
 
-import com.metadave.jkvc.eval.JKVCEvalByName;
 import com.metadave.jkvc.eval.JKVCEvalFactory;
 import com.metadave.jkvc.eval.JKVCPathEvaluator;
-import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.tree.ParseTree;
-import org.antlr.v4.runtime.tree.ParseTreeProperty;
 
 public class JKVCWalker extends JKVCBaseListener {
-    ParseTreeProperty<Object> values = new ParseTreeProperty<Object>();
+    //ParseTreeProperty<Object> values = new ParseTreeProperty<Object>();
     JKVCEvalFactory f;
     JKVCPathEvaluator p;
 
@@ -18,13 +14,13 @@ public class JKVCWalker extends JKVCBaseListener {
         this.p = f.makePathEvaluator();
     }
 
-    public void setValue(ParseTree node, Object value) {
-        values.put(node, value);
-    }
-
-    public Object getValue(ParseTree node) {
-        return values.get(node);
-    }
+//    public void setValue(ParseTree node, Object value) {
+//        values.put(node, value);
+//    }
+//
+//    public Object getValue(ParseTree node) {
+//        return values.get(node);
+//    }
 
 
     public JKVCPathEvaluator getP() {

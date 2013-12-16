@@ -2,9 +2,8 @@
 package com.metadave.jkvc.parser;
 
 import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.Token;
-import org.antlr.v4.runtime.tree.TerminalNode;
 import org.antlr.v4.runtime.tree.ErrorNode;
+import org.antlr.v4.runtime.tree.TerminalNode;
 
 public class JKVCBaseListener implements JKVCListener {
 	@Override public void enterIndex_ref(JKVCParser.Index_refContext ctx) { }

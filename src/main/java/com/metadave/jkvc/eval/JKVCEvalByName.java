@@ -1,11 +1,10 @@
 package com.metadave.jkvc.eval;
 
-import java.util.List;
 import java.util.Map;
 
 public class JKVCEvalByName implements JKVCEvaluator   {
 
-    private String key;
+    protected String key;
 
     protected JKVCEvalByName(String key) {
         this.key = key;

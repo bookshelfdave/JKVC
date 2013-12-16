@@ -1,11 +1,10 @@
 package com.metadave.jkvc.eval;
 
-import java.util.Collection;
 import java.util.List;
 
 public class JKVCEvalByIndex implements JKVCEvaluator {
 
-    private int index;
+    protected  int index;
 
     public JKVCEvalByIndex(int index) {
         this.index = index;
