@@ -1,0 +1,17 @@
+AT=5
+COLON=4
+HASH=3
+WS=10
+INT=9
+LSQUARE=1
+RSQUARE=2
+ID=8
+DOT=6
+I=7
+'#'=3
+'i'=7
+'@'=5
+':'=4
+'['=1
+'.'=6
+']'=2
