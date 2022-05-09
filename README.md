@@ -15,7 +15,7 @@ JKVC is a tool for querying hierarchies of Java collections (currently lists + m
 
 ## Example
 
-```
+```java
 // setup a demo hash containing lists
 HashMap<String, List<Integer>> m = new HashMap<String, List<Integer>>();
 List<Integer> a = new ArrayList<Integer>();
@@ -54,7 +54,7 @@ assertEquals(111, JKVC.prepare("bar.@i[0]").eval(m));
 
 Pass a `JKVCJsonEvalFactory` into each call to `JKVC.prepare`:
 
-```
+```java
 String testData = 
 "{\n" +
 "    \"firstName\": \"John\",\n" +
